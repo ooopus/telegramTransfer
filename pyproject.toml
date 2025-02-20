@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "telegramTransfer"
+description = "A tool for transferring files through Telegram"
+dynamic = ["version"]
+readme = "README.md"
+requires-python = ">= 3.8"
+license = {file = "LICENSE"}
+authors = [
+    {name = "ooopus", email = ""}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Communications :: File Sharing"
+]
+dependencies = [
+    "telethon>=1.28.5",
+    "click>=8.1.3",
+    "tqdm>=4.65.0",
+    "pyyaml>=6.0.1",
+    "cryptography>=41.0.3",
+    "loguru>=0.7.0",
+    "python-dotenv",
+    "tomli>=2.0.1",
+    "tomli-w>=1.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/ooopus/telegramTransfer"
+Repository = "https://github.com/ooopus/telegramTransfer.git"
+
+[project.scripts]
+telegramTransfer = "telegramTransfer.cli:cli"
+
+[tool.hatch.build]
+include = [
+    "*.py",
+    "*.example"
+]
+exclude = [
+    "tests",
+    "docs",
+    "*.pyc",
+]
+
+[tool.hatch.version]
+path = "telegramTransfer/__init__.py"

@@ -1,0 +1,35 @@
+# Telegram API凭据
+[api]
+id = ""  # 从 https://my.telegram.org 获取
+hash = ""
+
+# 会话配置
+[session]
+dir = "~/.config/telegramTransfer/sessions"  # 会话文件存储目录
+name = "default"  # 默认会话名称
+
+# 文件传输相关配置
+[transfer]
+chunk_size = 2097152
+retry_times = 3
+timeout = 300
+# 上传顺序: name_asc(按文件名升序), name_desc(按文件名降序), 
+# size_asc(按大小升序), size_desc(按大小降序), none(不排序)
+upload_order = "none"
+
+# 日志配置
+[logging]
+level = "INFO"  # 可选值：DEBUG, INFO, WARNING, ERROR, CRITICAL
+
+# 文件过滤规则
+[filters]
+exclude = [
+    ".DS_Store",
+    "Thumbs.db",
+    ".git/",
+    "__pycache__/",
+    "*.pyc",
+    ".*.swp",
+    ".env"
+]
+include = ["*"]
