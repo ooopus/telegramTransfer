@@ -10,18 +10,23 @@ name = "default"  # 默认会话名称
 
 # 文件传输相关配置
 [transfer]
-chunk_size = 2097152
-retry_times = 3
-timeout = 300
+chunk_size = 2097152  # 分块大小 (字节)
+retry_times = 3      # 失败重试次数
+timeout = 300        # 超时时间 (秒)
 # 上传顺序: name_asc(按文件名升序), name_desc(按文件名降序), 
 # size_asc(按大小升序), size_desc(按大小降序), none(不排序)
 upload_order = "none"
+
+[sync]
+# 是否在同步时自动删除远程服务器上检测到的重复文件的旧版本
+# 如果设置为 false，则会保留所有版本，可能会导致存储空间占用增加
+delete_duplicates = true
 
 # 日志配置
 [logging]
 level = "INFO"  # 可选值：DEBUG, INFO, WARNING, ERROR, CRITICAL
 
-# 文件过滤规则
+# 文件过滤
 [filters]
 exclude = [
     ".DS_Store",

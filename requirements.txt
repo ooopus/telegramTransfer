@@ -6,4 +6,5 @@ cryptography>=41.0.3
 loguru>=0.7.0
 python-dotenv
 tomli>=2.0.1
-tomli-w>=1.0.0
+tomli-w
+platformdirs>=1.0.0

@@ -2,4 +2,4 @@
 
 from .base import FileTransferManager
 
-__all__ = ['FileTransferManager']
+__all__ = ["FileTransferManager"]
